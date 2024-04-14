@@ -17,6 +17,7 @@ def connect():
 
 #Member Functions
 
+# Function to add new member
 def memberRegisteration(username, password, full_name, email, fitness_goal, height, weight):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -33,6 +34,7 @@ def memberRegisteration(username, password, full_name, email, fitness_goal, heig
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to add new trainer
 def trainerRegisteration(username, password, full_name, email, specialization, availability):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -42,6 +44,7 @@ def trainerRegisteration(username, password, full_name, email, specialization, a
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to modify member's info
 def profileManagement(member_id, new_full_name, new_fitness_goal, new_height, new_weight):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -51,6 +54,7 @@ def profileManagement(member_id, new_full_name, new_fitness_goal, new_height, ne
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to display member's dashboard
 def dashboardDisplay(member_id):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -84,6 +88,7 @@ def dashboardDisplay(member_id):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to schedule a private training session
 def scheduleManagement(member_id, trainer_id, session_date_time, duration):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -112,6 +117,7 @@ def scheduleManagement(member_id, trainer_id, session_date_time, duration):
     conn.close()  # Close the database connection
     print("Session scheduled successfully!")
 
+# Function to reschedule a private training session
 def rescheduleSession(schedule_id, new_session_date_time):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -140,6 +146,7 @@ def rescheduleSession(schedule_id, new_session_date_time):
     conn.close()  # Close the database connection
     print(f"Session with ID {schedule_id} rescheduled successfully to {new_session_date_time}")
 
+# Function to delete a scheduled private training session
 def deleteSession(schedule_id):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -158,7 +165,7 @@ def deleteSession(schedule_id):
     conn.close()  # Close the database connection
     print(f"Session with ID {schedule_id} deleted successfully")
 
-
+# Function to join a group class session
 def joinClass(member_id,class_id):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -188,6 +195,7 @@ def joinClass(member_id,class_id):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to view member's balance
 def viewBalance(member_id):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -206,6 +214,7 @@ def viewBalance(member_id):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to pay amount and add it to the member's balance
 def payBalance(member_id,amount):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -228,6 +237,7 @@ def payBalance(member_id,amount):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to add a new exercise routine
 def newExerciseRoutine(member_id, routine_date, exercise_type, duration_minutes, calories_burned):
     conn = connect()
     cur = conn.cursor()
@@ -240,6 +250,7 @@ def newExerciseRoutine(member_id, routine_date, exercise_type, duration_minutes,
     conn.close()
     print("Data inserted into ExerciseRoutines table successfully!")
 
+# Function to add a new fitness achievment
 def newFitnessAchievement(member_id, achievement_date, achievement_description):
     conn = connect()
     cur = conn.cursor()
@@ -252,6 +263,7 @@ def newFitnessAchievement(member_id, achievement_date, achievement_description):
     conn.close()
     print("Data inserted into FitnessAchievements table successfully!")
 
+# Function to add a new health statistics
 def newHealthStatistic(member_id, statistic_date, weight, height, body_fat_percentage, heart_rate, blood_pressure):
     conn = connect()
     cur = conn.cursor()
@@ -267,6 +279,7 @@ def newHealthStatistic(member_id, statistic_date, weight, height, body_fat_perce
 
 #Trainer Functions
 
+# Function to change the trainer's availability
 def setAvailability(trainer_id, availability):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -275,7 +288,8 @@ def setAvailability(trainer_id, availability):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
     print("Availability set successfully!")
-        
+
+# Function to view a member's profile by searching his name
 def memberProfileViewing(member_name):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -299,6 +313,7 @@ def memberProfileViewing(member_name):
 
 #Administrative Staff Functions
 
+# Function to book a room
 def book_room(room_id, booking_date_time, duration_minutes):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -315,7 +330,7 @@ def book_room(room_id, booking_date_time, duration_minutes):
     conn.close()  # Close the database connection
     print("Room booked successfully!")
     
-
+# Function to monitor and modify equipment maintenance 
 def equipmentMaintenanceMonitoring(equipment_id, maintenance_date):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -328,7 +343,7 @@ def equipmentMaintenanceMonitoring(equipment_id, maintenance_date):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
     
-
+# Function to modify a class's schedule
 def update_class_schedule(class_id, new_schedule):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -339,7 +354,8 @@ def update_class_schedule(class_id, new_schedule):
     print("Class schedule updated successfully!")
 
 # Some extra functions needed
-        
+
+# Function to login as a member      
 def memberLogin(username, password):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -354,7 +370,8 @@ def memberLogin(username, password):
     else:
         print("Incorrect username or password")
         return None  # Return None if login fails
-    
+        
+# Function to login as a trainer    
 def trainerLogin(username, password):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -369,7 +386,7 @@ def trainerLogin(username, password):
     else:
         print("Incorrect username or password")
         return None  # Return None if login fails
-
+# Function to login as an admin
 def adminLogin(username, password):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -384,7 +401,8 @@ def adminLogin(username, password):
     else:
         print("Incorrect username or password")
         return None  # Return None if login fails
-    
+
+# Function to display all trainers
 def trainersDisplay():
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -400,6 +418,7 @@ def trainersDisplay():
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to display all classes
 def classesDisplay():
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -416,6 +435,7 @@ def classesDisplay():
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to display all rooms
 def roomsDisplay():
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -432,6 +452,7 @@ def roomsDisplay():
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to display all equipments
 def equipmentDisplay():
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -448,6 +469,7 @@ def equipmentDisplay():
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Function to check if trainer is available for a session
 def check_trainer_availability(trainer_id, start_time, duration):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -467,7 +489,8 @@ def check_trainer_availability(trainer_id, start_time, duration):
         return startTimeStamp >= fromTimeStamp and endTimeStamp <= untilTimeStamp
     else:
         return False
-    
+
+# Function to display a member's schedule
 def displayMemberSchedule(member_id):
     conn = connect()  # Establish a connection to the database
     cur = conn.cursor()  # Create a cursor object
@@ -481,6 +504,7 @@ def displayMemberSchedule(member_id):
     cur.close()  # Close the cursor
     conn.close()  # Close the database connection
 
+# Interacting Terminal
 if __name__ == "__main__":
     command = None
     while (command != "exit"):
