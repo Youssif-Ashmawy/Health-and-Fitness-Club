@@ -7,10 +7,8 @@ Group Members:
 
 Overview:
 The Fitness Management System is a comprehensive application designed to manage the operations of a fitness center. 
-It provides functionalities for members, trainers, and administrative staff to manage various aspects of fitness training, scheduling, equipment maintenance, and more.
 The system is built using Python and PostgreSQL. The application uses the psycopg2 library to connect to the PostgreSQL database. 
-It employs functions to handle various database operations such as registration, login, scheduling, and data retrieval.
-
+It provides functionalities for members, trainers, and administrative staff to manage various aspects of fitness training, scheduling, equipment maintenance, and more, depending on your role.
 
 Key Features:
 
