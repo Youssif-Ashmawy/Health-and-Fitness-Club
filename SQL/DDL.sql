@@ -62,6 +62,7 @@ VALUES
 (2, '2024-04-11', 60.0, 160, 20.0, 70, '122/82'),
 (2, '2024-04-16', 59.5, 160, 19.5, 68, '120/80');
 
+-- Starting data for Balance table
 INSERT INTO Balance (member_id)
 VALUES
 (1),  
