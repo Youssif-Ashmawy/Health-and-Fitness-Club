@@ -2,8 +2,8 @@ COMP 3005
 Health and Fitness Club Project
 
 Group Members:
-Youssif Ashmawy
-Ahmad Qwaider
+* Youssif Ashmawy
+* Ahmad Qwaider
 
 Overview:
 The Fitness Management System is a comprehensive application designed to manage the operations of a fitness center. 
